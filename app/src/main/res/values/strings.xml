@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Unit Converter App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="text1">Type any value in the From field and touch the To field to get the converted result</string>
+
+    <!-- This is an ad unit ID for a test ad. Replace with your own banner ad unit id. -->
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+
+    <!-- This is production banner id. -->
+    <string name="banner_ad_unit_id">ca-app-pub-4658199485462889/4405122255</string>
+
+</resources>

@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "org.chisty.uniconverter"
+        minSdkVersion 14
+        targetSdkVersion 22
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.google.android.gms:play-services-ads:8.4.0'
+}
+
+
+
+
+
+dependencies {
+    compile 'com.purplebrain.adbuddiz.sdk:AdBuddiz-AdMob-Java:3.+'
+}
+repositories {
+    maven {
+        url 'http://repository.adbuddiz.com/maven'
+    }
+}

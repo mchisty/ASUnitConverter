@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
+        "source": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\unit2.png",
+        "source": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\src\\main\\res\\drawable-xhdpi\\unit2.png"
+    },
+    {
+        "merged": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\help.png",
+        "source": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\src\\main\\res\\drawable-xhdpi\\help.png"
+    },
+    {
+        "merged": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\unit.png",
+        "source": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\src\\main\\res\\drawable-xhdpi\\unit.png"
+    }
+]
