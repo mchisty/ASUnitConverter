@@ -165,11 +165,11 @@
                 "from": {
                     "file": "F:\\ANDROID_TOOLS\\MyGithubAndroidProjects\\ASUnitConverter\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 576,
+                        "startOffset": 437,
                         "endColumn": 84,
-                        "endOffset": 656
+                        "endOffset": 517
                     }
                 }
             },

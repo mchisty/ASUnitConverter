@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         // With this mode activated, your app will always display the same sample ad.
         // Remove it before publishing to Google Play.
-//        AdBuddiz.setTestModeActive();
+        AdBuddiz.setTestModeActive();
         AdBuddiz.setPublisherKey("a66d32b2-dbf3-480c-9864-1849206f70e5");
         AdBuddiz.cacheAds(this);
         AdBuddiz.showAd(MainActivity.this);
