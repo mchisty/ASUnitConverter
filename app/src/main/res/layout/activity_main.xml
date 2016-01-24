@@ -7,18 +7,29 @@
     android:theme="@style/AppTheme"
     tools:context=".MainActivity">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        />
+
     <ScrollView
+        android:id="@+id/scrollview_id"
         android:layout_width="match_parent"
         android:layout_height="fill_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:orientation="vertical"
-            android:padding="10dp"> <!-- android:layout_gravity="bottom" -->
+            android:padding="10dp">
 
             <!-- #### LinearLayout Block 1 #### -->
 
@@ -253,7 +264,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingBottom="60dp"
                 android:paddingTop="5dp">
 
                 <TextView
@@ -276,22 +286,8 @@
                     android:textSize="10sp"
                     android:textStyle="bold" />
             </LinearLayout>
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/ad_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id" />
 
 
 </RelativeLayout>

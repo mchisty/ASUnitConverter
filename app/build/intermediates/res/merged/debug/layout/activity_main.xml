@@ -1,292 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
     android:background="#000000"
     android:theme="@style/AppTheme"
-    tools:context=".MainActivity"
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    >
+    tools:context=".MainActivity">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="vertical"
-        android:padding="10dp"> <!-- android:layout_gravity="bottom" -->
-
-        <!-- #### LinearLayout Block 1 #### -->
-
-        <LinearLayout
-            android:id="@+id/layoutUnitType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="SELECT UNIT TYPE"
-                android:textColor="#9b7804"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:popupBackground="#ede1bb"
-                android:spinnerMode="dropdown" />
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 2 #### -->
-
-        <LinearLayout
-            android:id="@+id/labelLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="Choose source unit"
-                android:textColor="#e6e8b9"
-                android:textSize="10sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="Choose target unit"
-                android:textColor="#e6e8b9"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 3 #### -->
-        <!-- android:layout_height="wrap_content" -->
-
-        <LinearLayout
-            android:id="@+id/labelLayoutFromToTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="FROM"
-                android:textColor="#bf2626"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="TO"
-                android:textColor="#bf2626"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 4 #### -->
-
-        <LinearLayout
-            android:id="@+id/spinnerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/shape"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/spinnerLeft"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="2"
-                android:drawSelectorOnTop="true"
-                android:popupBackground="#d9f2bf" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/unit2" />
-
-            <Spinner
-                android:id="@+id/spinnerRight"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="2"
-                android:drawSelectorOnTop="true"
-                android:popupBackground="#d9f2bf" />
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 5 #### -->
-
-        <LinearLayout
-            android:id="@+id/labelTxtLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
-                android:text="Input your number here"
-                android:textColor="#e6e8b9"
-                android:textSize="10sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="right"
-                android:text="Touch here to convert"
-                android:textColor="#e6e8b9"
-                android:textSize="10sp" />
-
-            <ImageButton
-                android:id="@+id/helpBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="Help"
-                android:src="@drawable/help"
-                android:visibility="invisible" />
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 6 #### -->
-
-        <LinearLayout
-            android:id="@+id/inputTxtLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/shape"
-            android:orientation="horizontal"
-            android:showDividers="middle">
-
-            <EditText
-                android:id="@+id/fromUnitTxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="8"
-
-                android:inputType="numberDecimal"
-                android:textColor="#F1F111"
-                android:textStyle="bold"></EditText>
-
-            <EditText
-                android:id="@+id/toUnitTxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:clickable="true"
-                android:ems="8"
-
-                android:textColor="#F1F111"
-                android:textStyle="bold"></EditText>
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 7 #### -->
-
-        <LinearLayout
-            android:id="@+id/buttonLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/resetBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="Clear"
-                android:src="@drawable/reset" />
-
-            <ImageButton
-                android:id="@+id/exitBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="Exit"
-                android:src="@drawable/exit" />
-        </LinearLayout>
-
-        <!-- #### LinearLayout Block 8 #### -->
-
-        <LinearLayout
-            android:id="@+id/btnLabelLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="60dp"
-            android:paddingTop="5dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="Clear"
-                android:textColor="#e6e8b9"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="Exit"
-                android:textColor="#e6e8b9"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-
-
-
-
-    </LinearLayout>
-
-
-</ScrollView>
     <com.google.android.gms.ads.AdView
         android:id="@+id/ad_view"
         android:layout_width="match_parent"
@@ -295,7 +15,279 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id" />
+        ads:adUnitId="@string/banner_ad_unit_id"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollview_id"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- #### LinearLayout Block 1 #### -->
+
+            <LinearLayout
+                android:id="@+id/layoutUnitType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="SELECT UNIT TYPE"
+                    android:textColor="#9b7804"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:popupBackground="#ede1bb"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 2 #### -->
+
+            <LinearLayout
+                android:id="@+id/labelLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Choose source unit"
+                    android:textColor="#e6e8b9"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Choose target unit"
+                    android:textColor="#e6e8b9"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 3 #### -->
+            <!-- android:layout_height="wrap_content" -->
+
+            <LinearLayout
+                android:id="@+id/labelLayoutFromToTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="FROM"
+                    android:textColor="#bf2626"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="TO"
+                    android:textColor="#bf2626"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 4 #### -->
+
+            <LinearLayout
+                android:id="@+id/spinnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinnerLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:drawSelectorOnTop="true"
+                    android:popupBackground="#d9f2bf" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/unit2" />
+
+                <Spinner
+                    android:id="@+id/spinnerRight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:drawSelectorOnTop="true"
+                    android:popupBackground="#d9f2bf" />
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 5 #### -->
+
+            <LinearLayout
+                android:id="@+id/labelTxtLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:text="Input your number here"
+                    android:textColor="#e6e8b9"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="Touch here to convert"
+                    android:textColor="#e6e8b9"
+                    android:textSize="10sp" />
+
+                <ImageButton
+                    android:id="@+id/helpBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Help"
+                    android:src="@drawable/help"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 6 #### -->
+
+            <LinearLayout
+                android:id="@+id/inputTxtLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <EditText
+                    android:id="@+id/fromUnitTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="8"
+
+                    android:inputType="numberDecimal"
+                    android:textColor="#F1F111"
+                    android:textStyle="bold"></EditText>
+
+                <EditText
+                    android:id="@+id/toUnitTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:clickable="true"
+                    android:ems="8"
+
+                    android:textColor="#F1F111"
+                    android:textStyle="bold"></EditText>
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 7 #### -->
+
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/resetBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Clear"
+                    android:src="@drawable/reset" />
+
+                <ImageButton
+                    android:id="@+id/exitBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Exit"
+                    android:src="@drawable/exit" />
+            </LinearLayout>
+
+            <!-- #### LinearLayout Block 8 #### -->
+
+            <LinearLayout
+                android:id="@+id/btnLabelLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Clear"
+                    android:textColor="#e6e8b9"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Exit"
+                    android:textColor="#e6e8b9"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
