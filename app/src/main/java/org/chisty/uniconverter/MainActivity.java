@@ -1,7 +1,5 @@
 package org.chisty.uniconverter;
 
-import java.math.BigDecimal;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +16,8 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.purplebrain.adbuddiz.sdk.AdBuddiz;
+
+import java.math.BigDecimal;
 
 /**
  * The Class MainActivity.
@@ -62,6 +62,14 @@ public class MainActivity extends Activity {
     private String leftUnitName, rightUnitName;
 
     private AdView mAdView;
+    /**
+     * Calculate.
+     */
+
+    private BigDecimal result;
+
+
+
 
     /**
      * On create.
@@ -70,15 +78,16 @@ public class MainActivity extends Activity {
      */
     /*
      * (non-Javadoc)
-	 * 
+	 *
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // With this mode activated, your app will always display the same sample ad.
-        // Remove it before publishing to Google Play.
+        // For Adbuddiz
+        // Remove this line before publishing to Google Play.
         AdBuddiz.setTestModeActive();
+//        Adbuddiz for production
         AdBuddiz.setPublisherKey("a66d32b2-dbf3-480c-9864-1849206f70e5");
         AdBuddiz.cacheAds(this);
         AdBuddiz.showAd(MainActivity.this);
@@ -91,7 +100,7 @@ public class MainActivity extends Activity {
         leftUnitSpinner = (Spinner) findViewById(R.id.spinnerLeft);
         leftUnitSpinner.setMinimumHeight(100);
         rightUnitSpinner = (Spinner) findViewById(R.id.spinnerRight);
-        rightUnitSpinner.setMinimumHeight(200);
+        rightUnitSpinner.setMinimumHeight(100);
         fromUnitTxt = (EditText) findViewById(R.id.fromUnitTxt);
         toUnitTxt = (EditText) findViewById(R.id.toUnitTxt);
         resetBtn = (ImageButton) findViewById(R.id.resetBtn);
@@ -203,12 +212,6 @@ public class MainActivity extends Activity {
     }
 
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();  // Always call the superclass
-        // Stop method tracing that the activity started during onCreate()
-//        android.os.Debug.stopMethodTracing();
-    }
 
     private void manageHelpBtn() {
         if (null != toUnitTxt.getText() && toUnitTxt.getText().length() > 0) {
@@ -229,12 +232,6 @@ public class MainActivity extends Activity {
             }
         }
     }
-
-    /**
-     * Calculate.
-     */
-
-    private BigDecimal result;
 
     private void calculateTo() {
         CharSequence cs = fromUnitTxt.getText();
@@ -290,6 +287,14 @@ public class MainActivity extends Activity {
         } else if (currentMeasure.equals("POWER")) {
             adapter = new LabelValueAdapter(this, R.layout.spinner_txtview);
             for (PowerEnum s : PowerEnum.values()) {
+                LabelValue lv = new LabelValue(s.getLabel(), s.getValue());
+                adapter.add(lv);
+            }
+            leftUnitSpinner.setAdapter(adapter);
+            rightUnitSpinner.setAdapter(adapter);
+        } else if (currentMeasure.equals("AREA")) {
+            adapter = new LabelValueAdapter(this, R.layout.spinner_txtview);
+            for (AreaEnum s : AreaEnum.values()) {
                 LabelValue lv = new LabelValue(s.getLabel(), s.getValue());
                 adapter.add(lv);
             }
@@ -364,6 +369,14 @@ public class MainActivity extends Activity {
             leftUnitName = sourceEnum.name();
             rightUnitName = targetEnum.name();
             targetAmount = PowerManager.getConvertedAmount(sourceEnum, targetEnum, sourceAmount);
+        } else if (currentMeasure.equals("AREA")) {
+            LabelValue left = (LabelValue) objLeft;
+            LabelValue right = (LabelValue) objRight;
+            AreaEnum sourceEnum = AreaEnum.getName(left.getValue());
+            AreaEnum targetEnum = AreaEnum.getName(right.getValue());
+            leftUnitName = sourceEnum.name();
+            rightUnitName = targetEnum.name();
+            targetAmount = AreaManager.getConvertedAmount(sourceEnum, targetEnum, sourceAmount);
         }
 
         return targetAmount;
@@ -376,7 +389,7 @@ public class MainActivity extends Activity {
      * @return true, if successful
      */
     /*
-	 * (non-Javadoc)
+     * (non-Javadoc)
 	 * 
 	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
 	 */
@@ -392,7 +405,7 @@ public class MainActivity extends Activity {
      * @param item the item
      * @return true, if successful
      */
-	/*
+    /*
 	 * (non-Javadoc)
 	 * 
 	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
@@ -405,4 +418,22 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+
+
 }
